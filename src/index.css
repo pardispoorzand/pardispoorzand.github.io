@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand: clean light gray surface with sage + cream accents (Eden-inspired) */
+    --background: 30 12% 96%;          /* soft warm gray */
+    --foreground: 155 24% 10%;         /* near-black ink */
+
+    --card: 0 0% 100%;
+    --card-foreground: 155 24% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 155 24% 10%;
+
+    --primary: 155 28% 14%;            /* deep forest near black */
+    --primary-foreground: 42 38% 96%;
+
+    --secondary: 100 18% 82%;          /* soft sage */
+    --secondary-foreground: 155 28% 18%;
+
+    --muted: 30 14% 92%;
+    --muted-foreground: 155 8% 40%;
+
+    --accent: 18 62% 54%;              /* warm terracotta */
+    --accent-foreground: 42 38% 96%;
+
+    --sage: 142 32% 38%;
+    --sage-foreground: 42 38% 96%;
+    --cream: 42 50% 94%;
+    --ink: 155 30% 8%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 42 38% 96%;
+
+    --border: 30 12% 88%;
+    --input: 30 12% 88%;
+    --ring: 155 28% 18%;
+
+    --radius: 1.5rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(100 22% 82%) 0%, hsl(42 38% 96%) 100%);
+    --gradient-sage: linear-gradient(180deg, hsl(130 22% 52%) 0%, hsl(155 28% 22%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(18 62% 62%) 0%, hsl(28 58% 68%) 100%);
+
+    --shadow-soft: 0 8px 30px -8px hsl(155 28% 18% / 0.12);
+    --shadow-card: 0 2px 12px -4px hsl(155 28% 18% / 0.08);
+    --shadow-glow: 0 20px 60px -20px hsl(130 22% 52% / 0.4);
+
+    --transition-base: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 155 28% 8%;
+    --foreground: 42 38% 96%;
+    --card: 155 28% 10%;
+    --card-foreground: 42 38% 96%;
+    --popover: 155 28% 10%;
+    --popover-foreground: 42 38% 96%;
+    --primary: 42 38% 96%;
+    --primary-foreground: 155 28% 12%;
+    --secondary: 155 20% 18%;
+    --secondary-foreground: 42 38% 96%;
+    --muted: 155 20% 16%;
+    --muted-foreground: 42 12% 70%;
+    --accent: 18 62% 58%;
+    --accent-foreground: 42 38% 96%;
+    --border: 155 20% 18%;
+    --input: 155 20% 18%;
+    --ring: 42 38% 96%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0;
+    @apply text-foreground;
+  }
+  h1 { @apply text-5xl md:text-7xl leading-[1.02]; }
+  h2 { @apply text-4xl md:text-5xl leading-[1.05]; }
+  h3 { @apply text-2xl md:text-3xl leading-tight; }
+}
+
+@layer utilities {
+  .font-serif { font-family: 'Manrope', system-ui, sans-serif; }
+  .container-narrow { @apply max-w-5xl mx-auto px-6; }
+  .container-wide { @apply max-w-7xl mx-auto px-6; }
+  .text-balance { text-wrap: balance; }
+}
