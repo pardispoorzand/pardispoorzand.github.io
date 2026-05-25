@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Ora Medical Clinic Temporary Site Repository
 
-TODO: Document your project here
+intermediary site to update and showcase changes before eventually hosting it on a proper provider and linking it to your domain
