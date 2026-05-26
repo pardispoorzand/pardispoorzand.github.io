@@ -324,10 +324,58 @@ body{font-family:'Jost',sans-serif;color:#444444;background:#ffffff;-webkit-font
 .team-image img{width:100%;height:480px;object-fit:cover;border-radius:4px;}
 
 /* ── CTA BANNER ── */
-.cta-banner{background:#c8ddd9;padding:80px 5%;text-align:center;position:relative;overflow:hidden;}
-.cta-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(201,169,110,0.1) 0%,transparent 70%);}
-.cta-banner .section-h2{color:#1d1d1d;max-width:600px;margin:0 auto 16px;}
-.cta-banner p{color:#444444;font-size:16px;font-weight:300;margin-bottom:32px;}
+
+
+
+/* new cta */
+/* .cta-banner{background:#c8ddd9;padding:80px 5%;text-align:center;position:relative;overflow:hidden;} */
+/* The main CTA section container */
+.cta-banner {
+  background: #c8ddd9; /* Fallback background color */
+  padding: 140px 5%; /* INCREASED top and bottom padding from 80px to make it taller */
+  text-align: center; /* Your crucial line for alignment */
+  position: relative;
+  overflow: hidden;
+  min-height: 400px; /* Optional: Guarantees a minimum height for the banner */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The video positioned to fill the background */
+.cta-banner .background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: 0; /* Keeps it at the very bottom layer */
+}
+
+/* 1. DARK OVERLAY (Using a CSS pseudo-element so you don't need extra HTML) */
+.cta-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 50% opacity black. Change 0.5 to adjust darkness */
+  z-index: 1; /* Sits above the video (0) but below the text (2) */
+}
+
+/* The text content container */
+.cta-banner .cta-content {
+  position: relative;
+  z-index: 2; /* Sits above both the video and the dark overlay */
+  color: #ffffff; /* Sets text to white for readability over the dark background */
+}
+
+/* 2. SPACING BETWEEN BUTTON AND TEXT */
+.cta-banner .cta-content .btn {
+  margin-top: 32px;
+}
 
 /* ── FAQ ── */
 .faq-grid{max-width:720px;margin:0 auto;}
@@ -489,7 +537,7 @@ body{font-family:'Jost',sans-serif;color:#444444;background:#ffffff;-webkit-font
   <div class="container">
     <div class="why-grid">
       <div class="why-image">
-        <img src="https://cdn.prod.website-files.com/67eec5b02b33d0a0f358ebd3/683a15463a760fa40bae8c5a_AdobeStock_843535240%20681x454.png" alt="Physician-led weight loss care"/>
+        <img src="3women.png" alt="Physician-led weight loss care"/>
       </div>
       <div>
         <div class="section-tag">Ōra Medical Clinic · Physician-Guided Wellness</div>
@@ -541,7 +589,7 @@ body{font-family:'Jost',sans-serif;color:#444444;background:#ffffff;-webkit-font
       <div class="visit-callout" style="margin-top:32px;">
         <div class="visit-callout-title">No commitment to medication required</div>
         <div class="visit-callout-text">Whether you are considering GLP-1 therapy, looking for a physician-supervised lifestyle plan, or simply want to understand your options — your first visit is about getting answers and building a plan that is right for you. Medication is always an option, never a requirement.</div>
-        <a href="https://ora.janeapp.com/" target="_blank" class="btn" style="background:white;color:rgba(255,255,255,0.4);font-size:11px;padding:11px 24px;border-radius:3px;font-weight:700;letter-spacing:0.1em;text-decoration:none;display:inline-block;">Book Your First Appointment</a>
+        <a href="https://ora.janeapp.com/" target="_blank" class="btn" style="background:white;color:var(--new-green);font-size:11px;padding:11px 24px;border-radius:3px;font-weight:700;letter-spacing:0.1em;text-decoration:none;display:inline-block;">Book Your First Appointment</a>
       </div>
 
       <div style="margin-top:32px;padding:20px;background:#f0faf9;border-radius:6px;border-left:3px solid #c8ddd9;">
@@ -802,13 +850,29 @@ document.addEventListener("DOMContentLoaded",function(){runCalc();});
 </script>
 
 <!-- CTA BANNER -->
-<section class="cta-banner">
+<!-- <section class="cta-banner">
   <div style="position:relative;z-index:1;">
     <div class="section-tag" style="color:rgba(255,255,255,0.4);">Discover Your Path to Wellness</div>
     <h2 class="section-h2" style="color:var(--white);max-width:600px;margin:0 auto 16px;">Ready to Finally See <em style="color:var(--sage-l);">Real Results?</em></h2>
     <p>Schedule your consultation today and discover how our physician-supervised programs can help you achieve your health goals.</p>
     <a href="#contact-us" class="btn btn-gold">Contact Us Today</a>
   </div>
+</section> -->
+<section class="cta-banner"> 
+  
+  <video autoplay loop muted playsinline class="background-video">
+    <source src="weight_loss.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="cta-content">
+    <div class="section-tag" style="color:rgba(255,255,255,0.4);">Discover Your Path to Wellness</div>
+    <h2 class="section-h2" style="color:var(--white);max-width:600px;margin:0 auto 16px;">Ready to Finally See <em style="color:var(--new-green);">Real Results?</em></h2>
+    <p>Schedule your consultation today and discover how our physician-supervised programs can help you achieve your health goals</p>
+    <a href="#contact-us" class="btn btn-gold">Contact Us Today</a>
+
+  </div>
+
 </section>
 
 <!-- GOOGLE REVIEWS -->
