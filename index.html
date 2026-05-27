@@ -248,22 +248,22 @@ body{font-family:'Jost',sans-serif;color:#444444;background:#ffffff;-webkit-font
 
 /* ── STATS ── */
 /* ── STATS REDESIGN ── */
-.stats-section-wrap{background:linear-gradient(135deg,#1a3530 0%,#2e5f57 60%,#1a3530 100%);padding:96px 5%;position:relative;overflow:hidden;}
+.stats-section-wrap{background:var(--new-green);padding:96px 5%;position:relative;overflow:hidden;}
 .stats-section-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(200,221,217,0.08) 0%,transparent 70%);}
 .stats-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
 .stats-header{text-align:center;margin-bottom:64px;}
-.stats-header .section-tag{color:#5aaa9e;}
+.stats-header .section-tag{color:white;}
 .stats-header .section-h2{color:#ffffff;}
-.stats-header .section-h2 em{color:#5aaa9e;}
-.stats-header p{color:rgba(255,255,255,0.6);font-size:16px;font-weight:300;max-width:520px;margin:0 auto;}
+.stats-header .section-h2 em{color:white;}
+.stats-header p{color:rgba(255,255,255,0.9);font-size:16px;font-weight:300;max-width:520px;margin:0 auto;}
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
 .stat-block{padding:48px 32px;text-align:center;position:relative;border-right:1px solid rgba(200,221,217,0.15);}
 .stat-block:last-child{border-right:none;}
 .stat-block::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:40px;height:3px;background:#c8ddd9;opacity:0;}
 .stat-block:hover::before{opacity:1;transition:opacity 0.3s;}
-.stat-big{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:700;color:rgba(255,255,255,0.4);line-height:1;letter-spacing:-0.02em;margin-bottom:12px;}
+.stat-big{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:700;color:rgba(255,255,255,0.8);line-height:1;letter-spacing:-0.02em;margin-bottom:12px;}
 .stat-title{font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.9);margin-bottom:10px;}
-.stat-body{font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;max-width:180px;margin:0 auto;}
+.stat-body{font-size:12px;font-weight:300;color:rgba(255,255,255,0.9);line-height:1.6;max-width:180px;margin:0 auto;}
 .stats-cta{text-align:center;margin-top:56px;}
 @media(max-width:900px){
   .stats-row{grid-template-columns:1fr 1fr;}
